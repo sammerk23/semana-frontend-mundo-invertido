@@ -7,6 +7,7 @@
     <title>Mundo Invertido | Semana Front-end</title>
 
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="assets/js/script.js" defer></script>
   </head>
   <body class="light-theme" aria-label="O site está utilizando o tema light" role="body">
     <header aria-label="Cabeçalho da página.">
@@ -22,7 +23,11 @@
           Vecna. Você está preparado? Então clique no botão abaixo para entrar
           no Mundo Invertido!
         </p>
-        <button id="switch-theme-button" onclick="switchTheme()">Inverter Mundos</button>
+        <button id="switchTheme" onclick="switchTheme()">Inverter Mundos</button>
+        <script>
+          function switchTheme() {
+            document.getElementById("switchTheme").style.color = "red";
+          }</script>
       </div>
 
       <div id="top-characters" class="world-characters"></div>
