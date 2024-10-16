@@ -61,3 +61,9 @@ label #char-desc {
     width: 50%;
     margin-top: 2%;
 }
+
+.btn-clicked {
+  background-color: #ffac09;
+  box-shadow: 0 0 40px #ffac09;
+  transition: .5s ease;
+}
