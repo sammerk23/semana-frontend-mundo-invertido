@@ -7,7 +7,6 @@
     <title>Mundo Invertido | Semana Front-end</title>
 
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <script src="assets/js/script.js" defer></script>
   </head>
   <body id="switchTheme" class="light-theme" aria-label="O site está utilizando o tema light" role="body">
     <header aria-label="Cabeçalho da página.">
@@ -16,23 +15,14 @@
       </audio>
       <div class="header-content">
         <img class="invert-element" id="banner" src="assets/images/banner/logo.svg" alt="Imagem principal Mundo Invertido. Semana Frontend DIO." />
-        <p id="invert-text" class="invert-element" role="text">
+        <p class="theme-text" role="text">
           Uma jornada para quem não tem medo do desconhecido. O caminho para o
           Mundo invertido é incerto, repleto de obstáculos e perigos. Porém, a
           recompensa é grande: salvar Hawkings e o mundo todo das garras de
           Vecna. Você está preparado? Então clique no botão abaixo para entrar
           no Mundo Invertido!
         </p>
-        <button onclick="switchTheme()">Inverter Mundos</button>
-        <script>
-          function switchTheme() {
-            if (document.getElementById("switchTheme").style.backgroundColor == "white") {
-              document.getElementById("switchTheme").style.backgroundColor = "black";
-              document.getElementById("invert-text").style.color = "white";
-            } else {
-            document.getElementById("switchTheme").style.backgroundColor = "white";
-            document.getElementById("invert-text").style.color = "black";
-          }}</script>
+        <button class="switch-theme-button" onclick="switchTheme()">Inverter Mundos</button>
       </div>
 
       <div id="top-characters" class="world-characters"></div>
@@ -43,8 +33,8 @@
 
       <section id="section-inverted-world" class="container">
         <div class="section-texts">
-          <h1 id="invert-text">O Mundo Invertido</h1>
-          <p id="invert-text" role="text">
+          <h1 class="theme-text">O Mundo Invertido</h1>
+          <p class="theme-text" role="text">
             O Mundo Invertido parece uma cópia do nosso mundo, mas com criaturas
             horrendas, tempestades assustadoras, muita escuridão e entidades
             malignas. Um reino controlado por Vecna, que tem planos de trazer
@@ -72,8 +62,8 @@
           ></iframe>
         </div>
         <div class="section-texts">
-          <h2 id="title4">Stranger Things Vol. 4</h2>
-          <p id="invert-text" role="text">
+          <h2 id="title4" class="theme-text">Stranger Things Vol. 4</h2>
+          <p class="theme-text" role="text">
             Mais experientes, os heróis de Stranger Things também precisam
             enfrentar desafios maiores do que nunca e fazer decisões que vão
             mudar suas vidas para sempre. Confira ao lado o trailer da quarta
@@ -100,8 +90,8 @@
       </section>
 
       <section id="section-form" class="container">
-        <h2 id="invert-text">O Clube Dungeons & Dragons</h2>
-        <p id="invert-text">
+        <h2 class="theme-text">O Clube Dungeons & Dragons</h2>
+        <p class="theme-text">
           Para deter Vecna, os heróis de Stranger Things também precisam de
           você. O Clube de D&D mais famoso de Hawkings está com vagas abertas
           para sua próxima aventura. Se você é destemido, gosta de desafios e
@@ -110,7 +100,7 @@
         </p>
 
         <div class="form-content">
-          <h3 id="invert-text">Entre para o clube de D&D e tenha experiências de <span>outro mundo<span></span></h3>
+          <h3 class="theme-text">Entre para o clube de D&D e tenha experiências de <span>outro mundo<span></span></h3>
 
           <div class="form-container">
             <form>
@@ -135,16 +125,28 @@
     </main>
 
     <footer>
-      <p id="invert-text">
+      <p class="theme-text">
         Projeto construído para fins didáticos, com o objetivo de colocar em
         prática os conhecimentos de HTML, CSS e JavaScript aprendidos na DIO.
       </p>
       <img src="assets/images/footer/logo.svg" alt="">
     </footer>
     
-    <script type="module" src="assets/js/main.js"></script>
     <script>
-      
-    </script>
+      function switchTheme() {
+        const themeElements = document.querySelectorAll('.theme-text');
+        const switchThemeButton = document.getElementById("switchTheme");
+
+    if (switchThemeButton.style.backgroundColor == "white") {
+      switchThemeButton.style.backgroundColor = "black";
+      themeElements.forEach(element => {
+        element.style.color = "white";
+      });
+    } else {
+      switchThemeButton.style.backgroundColor = "white";
+      themeElements.forEach(element => {
+        element.style.color = "black";
+      });
+      }}</script>
   </body>
 </html>
