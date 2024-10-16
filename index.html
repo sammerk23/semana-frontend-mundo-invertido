@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/css/styles.css" />
     <script src="assets/js/script.js" defer></script>
   </head>
-  <body class="light-theme" aria-label="O site está utilizando o tema light" role="body">
+  <body id="switchTheme" class="light-theme" aria-label="O site está utilizando o tema light" role="body">
     <header aria-label="Cabeçalho da página.">
       <audio id="music" autoplay>
         <source src="assets/musics/normal-world.mpeg" aria-details="Audio do site" />
@@ -23,11 +23,16 @@
           Vecna. Você está preparado? Então clique no botão abaixo para entrar
           no Mundo Invertido!
         </p>
-        <button id="switchTheme" onclick="switchTheme()">Inverter Mundos</button>
+        <button onclick="switchTheme()">Inverter Mundos</button>
         <script>
           function switchTheme() {
-            document.getElementById("switchTheme").style.color = "red";
-          }</script>
+            if (document.getElementById("switchTheme").style.backgroundColor == "white") {
+              document.getElementById("switchTheme").style.backgroundColor = "black";
+              document.getElementById("invert-text").style.color = "white";
+            } else {
+            document.getElementById("switchTheme").style.backgroundColor = "white";
+            document.getElementById("invert-text").style.color = "black";
+          }}</script>
       </div>
 
       <div id="top-characters" class="world-characters"></div>
@@ -38,8 +43,8 @@
 
       <section id="section-inverted-world" class="container">
         <div class="section-texts">
-          <h1>O Mundo Invertido</h1>
-          <p role="text">
+          <h1 id="invert-text">O Mundo Invertido</h1>
+          <p id="invert-text" role="text">
             O Mundo Invertido parece uma cópia do nosso mundo, mas com criaturas
             horrendas, tempestades assustadoras, muita escuridão e entidades
             malignas. Um reino controlado por Vecna, que tem planos de trazer
@@ -68,7 +73,7 @@
         </div>
         <div class="section-texts">
           <h2 id="title4">Stranger Things Vol. 4</h2>
-          <p role="text">
+          <p id="invert-text" role="text">
             Mais experientes, os heróis de Stranger Things também precisam
             enfrentar desafios maiores do que nunca e fazer decisões que vão
             mudar suas vidas para sempre. Confira ao lado o trailer da quarta
@@ -79,7 +84,7 @@
 
       <section id="section-stranger-things-gallery">
         <div class="container section-text">
-          <h2>A segunda série mais assistida da Netflix</h2>
+          <h2 id="invert-text">A segunda série mais assistida da Netflix</h2>
           <ul class="gallery-container" role="gallery">
             <li class="gallery-image invert-element">
               <img src="assets/images/content/serie-image-01.png" alt="Imagem de Vecna" />
@@ -95,8 +100,8 @@
       </section>
 
       <section id="section-form" class="container">
-        <h2>O Clube Dungeons & Dragons</h2>
-        <p>
+        <h2 id="invert-text">O Clube Dungeons & Dragons</h2>
+        <p id="invert-text">
           Para deter Vecna, os heróis de Stranger Things também precisam de
           você. O Clube de D&D mais famoso de Hawkings está com vagas abertas
           para sua próxima aventura. Se você é destemido, gosta de desafios e
@@ -105,7 +110,7 @@
         </p>
 
         <div class="form-content">
-          <h3>Entre para o clube de D&D e tenha experiências de <span>outro mundo<span></span></h3>
+          <h3 id="invert-text">Entre para o clube de D&D e tenha experiências de <span>outro mundo<span></span></h3>
 
           <div class="form-container">
             <form>
@@ -130,7 +135,7 @@
     </main>
 
     <footer>
-      <p>
+      <p id="invert-text">
         Projeto construído para fins didáticos, com o objetivo de colocar em
         prática os conhecimentos de HTML, CSS e JavaScript aprendidos na DIO.
       </p>
